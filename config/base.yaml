@@ -1,0 +1,44 @@
+# Feelin 主窗口标题
+feelin_window_title: '菲林系统'
+# 新增患者 按钮
+add_patient: 126,1002
+# 患者姓名 文本框
+patient_name: 605,340
+# 患者姓名 文本框
+patient_phone: 925,340
+# 新增患者提交 按钮
+add_patient_submit: 892,743
+# 影像信息 tab
+image_info: 373,41
+# 模式选择 下拉框
+model_select: 321,91
+# ct模式 偏移量
+ct_shift: 0,50
+# 立即拍片 按钮
+shoot: 457,98
+# 机器准备 按钮
+machine_ready: 89,973
+# 确认拍摄 按钮
+take_shot: 200,973
+# 完成拍摄按钮坐标
+finish_take_shot: 318,973
+# 拍摄之前等待
+wait_before_take_shot: 5.0
+# 完成之前等待 依据机器实际拍摄性能而定
+wait_before_finish_take_shot: 90.0
+# 点击完成拍摄之后 强制等待
+wait_after_finish_take_shot: 10.0
+# 默认拍摄间隔
+wait_pre_shot: 10.0
+
+
+
+# 完全加载拍摄界面之前的等待时间
+wait_before_ps_ui_load_value: 5.0
+# TMJ第二次拍摄之前的准备时间
+wait_before_tmj_second_ps_value: 15.0
+# 重建等待时间
+wait_before_rebuild_value: 10.0
+
+# 确认拍摄之前的等待时间 秒
+wait_before_qrps_value: 10.0
