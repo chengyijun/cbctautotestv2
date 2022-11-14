@@ -8,7 +8,10 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[
+        ('config/*.yaml','config'),
+        ('cp_images/*.png','cp_images')
+    ],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -26,7 +29,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='main',
+    name='run',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -46,5 +49,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='main',
+    name='CBCTAutoTestV2',
 )
