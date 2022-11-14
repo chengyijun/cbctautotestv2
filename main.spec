@@ -8,12 +8,9 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[
-        ('config/*.yaml','config'),
-        ('cp_images/*.png','cp_images')
-    ],
-    hiddenimports=[],
-    hookspath=[],
+    datas=[],
+    hiddenimports=["packagehook"],
+    hookspath=["."],
     hooksconfig={},
     runtime_hooks=[],
     excludes=[],
