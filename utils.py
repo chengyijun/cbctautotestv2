@@ -191,7 +191,7 @@ def get_pos(config_name: str) -> Tuple[int]:
 def get_patient_name(mode: str, num: int):
     patient_name = str(uuid4())
     # random.randint()
-    return f"{mode}_{patient_name[-6:]}_{num}"
+    return f"{num}_{patient_name[-6:]}_{mode}"
 
 
 def get_patient_phone():
