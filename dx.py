@@ -7,22 +7,22 @@ from utils import wait_until_checkpoint_appear, select_app, click_action, get_po
     read_config_data
 
 
-class CT:
+class DX:
 
     def image_collect(self):
         # 切换tab 到【影像信息】
         click_action(*get_pos('image_info'))
         # 点击 模式选择 下拉框
         click_action(*get_pos('model_select'))
-        # 切换到【ct】模式
-        shift_action(*get_pos('ct_shift'))
+        # 切换到【dx】模式
+        shift_action(*get_pos('dx_shift'))
         # 点击 【立即拍片】
         click_action(*get_pos('shoot'))
 
         print("进入采集界面")
         wait_until_checkpoint_appear("cp1_jqzb.png")
-        sleep(read_config_data().get("wait_before_ready"))
         # 点击【机器准备】
+        sleep(read_config_data().get("wait_before_ready"))
         click_action(*get_pos('machine_ready'))
         print("确认拍摄检查点")
         wait_until_checkpoint_appear("cp2_qrps.png")
@@ -39,10 +39,10 @@ class CT:
 
 
 def main():
-    ct = CT()
+    dx = DX()
     select_app()
-    add_patient()
-    ct.image_collect()
+    add_patient(1)
+    dx.image_collect()
 
 
 if __name__ == '__main__':

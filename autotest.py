@@ -33,7 +33,7 @@ class AutoTest(QThread):
             print("ct测试")
             ct = CT()
             select_app()
-            add_patient()
+            add_patient(i + 1)
             ct.image_collect()
             sleep(wait_duration)
 
