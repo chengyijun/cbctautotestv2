@@ -6,6 +6,9 @@ from time import sleep
 from PyQt5.QtCore import QThread
 
 from ct import CT
+from dx import DX
+from px import PX
+from tmj import TMJ
 from utils import select_app, add_patient, read_config_data
 
 
@@ -29,19 +32,35 @@ class AutoTest(QThread):
             "wait_pre_shot")
         print(ct_loop_count, px_loop_count, dx_loop_count, tmj_loop_count, wait_duration)
 
-        for i in range(ct_loop_count):
+        for i in range(1, ct_loop_count + 1):
             print("ct测试")
             ct = CT()
             select_app()
-            add_patient(i + 1)
+            add_patient("ct", i)
             ct.image_collect()
             sleep(wait_duration)
 
-        for i in range(px_loop_count):
+        for i in range(ct_loop_count + 1, ct_loop_count + px_loop_count + 1):
             print("px测试")
+            px = PX()
+            select_app()
+            add_patient("px", i)
+            px.image_collect()
+            sleep(wait_duration)
 
-        for i in range(dx_loop_count):
+        for i in range(ct_loop_count + px_loop_count + 1, ct_loop_count + px_loop_count + dx_loop_count + 1):
             print("dx测试")
+            dx = DX()
+            select_app()
+            add_patient("dx", i)
+            dx.image_collect()
+            sleep(wait_duration)
 
-        for i in range(tmj_loop_count):
+        for i in range(ct_loop_count + px_loop_count + dx_loop_count + 1,
+                       ct_loop_count + px_loop_count + dx_loop_count + tmj_loop_count + 1):
             print("tmj测试")
+            tmj = TMJ()
+            select_app()
+            add_patient("tmj", i)
+            tmj.image_collect()
+            sleep(wait_duration)

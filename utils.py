@@ -188,10 +188,10 @@ def get_pos(config_name: str) -> Tuple[int]:
     return eval(read_config_data().get(config_name))
 
 
-def get_patient_name(num: int):
+def get_patient_name(mode: str, num: int):
     patient_name = str(uuid4())
     # random.randint()
-    return f"ts_{patient_name[-6:]}_{num}"
+    return f"{mode}_{patient_name[-6:]}_{num}"
 
 
 def get_patient_phone():
@@ -199,11 +199,11 @@ def get_patient_phone():
     return f"13{random_suffix}"
 
 
-def add_patient(num: int):
+def add_patient(mode: str, num: int):
     # 点击 【新增患者】 按钮
     click_action(*get_pos('add_patient'))
     # 输入【患者姓名】
-    patient_name = get_patient_name(num)
+    patient_name = get_patient_name(mode, num)
     type_action(*get_pos('patient_name'), patient_name)
     # 输入【手机】
     patient_phone = get_patient_phone()
